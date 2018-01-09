@@ -28,15 +28,17 @@ sendCommandToPinnedTab(command)
 	if WinActive("ahk_class MozillaWindowClass")
 	{
 		activityWasChanged := FALSE
+		WinMinimize
+		sleep 10
 	}
 	send, {LWin down}5
-	sleep 125
+	sleep 150
 	send, {LWin up}
-	sleep 125
+	sleep 150
 	send, ^1
-	sleep 50
+	sleep 150
 	send {%command%}
-	if (activityWasChanged)  
+	if (activityWasChanged)
 	{
 		WinActive("ahk_class MozillaWindowClass")
 		WinMinimize
