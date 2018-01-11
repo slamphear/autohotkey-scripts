@@ -37,6 +37,10 @@ sendCommandToPinnedTab(command)
 	sleep 150
 	send, ^1
 	sleep 150
+	send, {tab}
+	sleep 20
+	send, {RShift down}{tab}{RShift up}
+	sleep 20
 	send {%command%}
 	if (activityWasChanged)
 	{
